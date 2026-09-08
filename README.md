@@ -117,7 +117,9 @@ Java, Maven, JUnit, LLVM IR
 
 ## Team
 
-Three-person group project.
+* **Karim Amin**
+* **Mohammad Amin**
+* **Taaha Khan**
 
 ## Disclaimer
 
