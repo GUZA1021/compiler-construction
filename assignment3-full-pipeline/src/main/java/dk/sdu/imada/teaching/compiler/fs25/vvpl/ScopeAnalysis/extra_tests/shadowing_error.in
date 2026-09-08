@@ -1,0 +1,40 @@
+#Function 1
+variable x has_type Number is 1;
+
+{
+    variable x has_type Number is 2;   #SCOPE_ERROR (shadowing)
+    write_to_console x;
+}
+
+
+#Function 2
+
+variable i has_type Number is 10;
+
+function f() {
+    variable y has_type Number is 20;   #Not shadowing, inside function
+    write_to_console y;
+}
+
+
+
+#Function 3
+
+function y() {
+    variable a has_type Number is 1;
+    variable a has_type Number is 2;    #SCOPE_ERROR
+}
+
+
+
+#Function 4
+
+function l() {
+    variable b has_type Number is 3;
+
+    {
+        variable b has_type Number is 5;    #SCOPE_ERROR
+        write_to_console b;
+    }
+}
+

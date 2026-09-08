@@ -1,0 +1,33 @@
+#Test 1 - global function scope and calling a function before definition
+
+variable a has_type Number is fibonacci(5);
+
+function fibonacci(n has_type Number) has_type Number {
+    return n;
+}
+
+
+
+#Test 2 - duplication global function 
+function functionone(x has_type Number) has_type Number {
+    return x;
+}
+
+function functionone(i has_type Number) has_type Number {   #SCOPE_ERROR
+    return i;
+}
+
+#Test 3 - return outside function
+
+return 5;                                                   #SCOPE_ERROR
+
+
+
+#Test 4 - illegal function declaration inside a block
+variable c has_type Number is 1;
+
+if (true) {
+    function triple(x has_type Number) has_type Number {    #SCOPE_ERROR
+        return x;
+    }
+}
